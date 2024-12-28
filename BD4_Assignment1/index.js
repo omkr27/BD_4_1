@@ -32,7 +32,7 @@ app.get('/restaurants', async (req, res) => {
     if (result.restaurants.length === 0) {
       return res.status(404).json({ message: 'No restaurants found.' });
     }
-    res.status(200).json(result);
+    res.status(200).json({restaurants: result});
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
